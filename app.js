@@ -40,3 +40,19 @@ seeMoreButtons.forEach((button) => {
 backButton.onclick = function(){
     carousel.classList.remove('showDetail');
 }
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+        
+        }
+        else{
+            entry.target.classList.remove('show');
+        }
+    })
+});
+
+const zero = document.querySelectorAll('.zero');
+zero.forEach((el) => observer.observe(el));
