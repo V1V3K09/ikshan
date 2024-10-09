@@ -1,8 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 body{
     margin: 0;
     background-color: #F4F4F4;
-    font-family: Poppins;
+    font-family: Oswald;
+}
+.about1 {
+    padding: 50px;
+    height: 100vh;
+}
+
+.about1 .title1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.about1 .content1 {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+}
+
+.about1 .text1 {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #555;
+    padding-right: 20px;
+}
+
+.about1 .text1 p {
+    margin: 0;
+}
+
+.about1 .img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about1 .img img {
+    max-width: 100%;
+    height: auto;
 }
 .landing-page{
     width: 100%;
@@ -10,7 +53,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 220px;
+    font-size: 10em;
     font-weight: 500;
     letter-spacing: 3px;
     text-align: center;
@@ -55,6 +98,11 @@ header{
 }
 header .logo{
     font-weight: bold;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 header nav a{
     margin-left: 30px;
@@ -167,7 +215,7 @@ header nav a{
 }
 /* animation text in item2 */
 .carousel .list .item:nth-child(2) .introduce .title,
-.carousel .list .item:nth-child(2) .introduce ,
+.carousel .list .item:nth-child(2) .introduce
 .carousel .list .item:nth-child(2) .introduce .des,
 .carousel .list .item:nth-child(1) .introduce .seeMore{
     opacity: 0;
@@ -371,7 +419,7 @@ header nav a{
     letter-spacing: 3px;
     background-color: transparent;
     padding: 10px;
-    /* opacity: 0; */
+    opacity: 0;
     transition: opacity 0.5s;
 }
 .carousel.showDetail #back{
@@ -381,6 +429,7 @@ header nav a{
 .carousel.showDetail #next{
     opacity: 0;
     pointer-events: none;
+    transition: opacity 0.5s;
 }
 .carousel::before{
     width: 500px;
@@ -400,6 +449,20 @@ header nav a{
     transform: translate(-100%, -50%) rotate(90deg);
     filter: blur(130px);
 }
+.zero {
+    opacity: 0;
+    transition: all 1s ease-out;
+    filter: blur(5px);
+    transform: translateX(50px);
+    background-color: transparent;
+  }
+  
+  .show {
+    opacity: 1;
+    transition: all 1s ease-in;
+    filter: blur(0px);
+    transform: translateX(0px);
+  }
 @media screen and (max-width: 991px){
     /* ipad, tablets */
     .carousel .list .item{
@@ -414,6 +477,30 @@ header nav a{
 }
 @media screen and (max-width: 767px){
     /* mobile */
+    .content1{
+        display: flex;
+        flex-direction: column-reverse !important;
+    }
+    .text1{
+        flex: 1;
+        font-size: 1rem;
+        color: #555;
+        padding-right: 20px;
+    }
+    .landing-page{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-align: center;
+        background: linear-gradient(180deg, rgb(252, 58, 54), rgb(0, 42, 255));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     .carousel{
         height: 600px;
     }
@@ -445,5 +532,5 @@ header nav a{
         display: flex;
         width: max-content;
         float: right;
-    }
 }
+}  
