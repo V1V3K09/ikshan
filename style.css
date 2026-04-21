@@ -52,12 +52,14 @@ nav {
     margin-bottom: 1rem;
     color: var(--text-primary);
     font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 2px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
 }
 
 .bottom-logo {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
     color: var(--text-secondary);
     font-size: 13vw;
     font-weight: 500;
@@ -358,6 +360,15 @@ footer {
 
 /* Responsive */
 @media (max-width: 900px) {
+    .container {
+        justify-content: center;
+    }
+
+    main {
+        flex-grow: 0;
+        margin-bottom: 2rem;
+    }
+
     .arch-wrapper {
         width: 600px;
         height: 300px;
@@ -374,6 +385,21 @@ footer {
 
     .nav-links {
         display: none;
+    }
+
+    .bottom-logo {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 18vw;
+        font-weight: 700;
+        line-height: 0.85;
+        gap: 0;
+        width: 100%;
+        opacity: 0.8; /* Make it more prominent on mobile */
+    }
+
+    .word-2 {
+        align-self: flex-end;
     }
 }
 
